@@ -125,7 +125,7 @@ def return_simple_integer():
 
 
 def make_and_return_simple_dictionary(key, value):
-    return "{" + key + ": " + value + "}"
+    return {key: value}
 
 
 
@@ -170,8 +170,6 @@ def make_and_return_complex_dictionary(keys, values):
     my_dict = {}
     for i in range(len(keys)):
         my_dict[keys[i]] = values[i]
-    my_dict["background"] = "testing"
-    del(my_dict["name"])
     return my_dict
 
 
@@ -215,6 +213,10 @@ def make_and_return_complex_dictionary(keys, values):
 
 def triangle_number(n):
     answer = n
+
+    if n == 0: 
+        return answer 
+    
     while True:
         n -= 1
         answer += n
@@ -262,7 +264,7 @@ def triangle_number(n):
 
 
 def sort_this_list(mylist):
-    return mylist.sort()
+    return sorted(mylist)
 
 
 
@@ -305,10 +307,15 @@ def sort_this_list(mylist):
 
 def check_for_chocolate_cakes(cake_list):
     for cake in cake_list:
+        print(cake)
         if "chocolate" in cake.lower():
             return True
-        else:
-            return False
+
+    return False
+
+
+
+    
 
 
 
